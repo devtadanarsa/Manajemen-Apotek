@@ -1,0 +1,109 @@
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="add-modal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Tambah Obat</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="/obat" method="POST">
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="name">Nama Obat</label>
+            <input
+              type="text"
+              class="form-control"
+              id="namaObat"
+              name="namaObat"
+              placeholder="Masukkan Nama Obat"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="name">Jenis Obat</label>
+            <input
+              type="text"
+              class="form-control"
+              id="jenisObat"
+              name="jenisObat"
+              placeholder="Masukkan Jenis Obat"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="name">Harga</label>
+            <input
+              type="number"
+              class="form-control"
+              id="harga"
+              name="harga"
+              placeholder="Masukkan Harga"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="name">Deskripsi Obat</label>
+            <textarea
+              class="form-control"
+              id="exampleFormControlTextarea1"
+              placeholder="Masukan Deskripsi Obat"
+              name="deskripsiObat"
+              rows="3"
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="name">Efek Samping</label>
+            <textarea
+              class="form-control"
+              id="exampleFormControlTextarea1"
+              placeholder="Masukan Efek Samping"
+              name="efekSamping"
+              rows="3"
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="name">Dosis</label>
+            <input
+              type="number"
+              class="form-control"
+              id="dosis"
+              name="dosis"
+              placeholder="Masukkan Dosis dalam Sehari"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="name">Kontraindikasi</label>
+            <textarea
+              class="form-control"
+              id="exampleFormControlTextarea1"
+              placeholder="Masukan Kontraindikasi"
+              name="kontraindikasi"
+              rows="3"
+            ></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            Close
+          </button>
+          <button type="submit" class="btn btn-primary">Add</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
