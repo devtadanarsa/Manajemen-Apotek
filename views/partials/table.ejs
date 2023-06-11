@@ -1,0 +1,91 @@
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <!-- Button trigger modal -->
+      <button
+        type="button"
+        class="btn btn-outline-primary btn-sm"
+        data-toggle="modal"
+        data-target="#add-modal"
+      >
+        Tambah Obat
+      </button>
+
+      <nav class="navbar d-sm-inline-block navbar-light bg-light">
+        <form class="form-inline" method="GET">
+          <input type="text" class="form-control bg-light border-0 small" id="searchInput" name="search" placeholder="Cari Obat" aria-label="Search"
+            aria-describedby="basic-addon2">
+          <div class="input-group-append">
+            <div class="btn-group">
+              <button type="button" class="btn btn-primary" id="namaInput" aria-haspopup="true"
+                aria-expanded="false">
+                <i class="fas fa-search fa-sm"></i>
+              </button>
+            </div>
+          </div>
+          <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+        </form>
+      </nav>
+
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table
+          class="table table-bordered"
+          id="dataTable"
+          width="100%"
+          cellspacing="0"
+        >
+          <thead>
+            <tr>
+              <th class="text-center">No</th>
+              <th class="text-center">Nama Obat</th>
+              <th class="text-center">Jenis Obat</th>
+              <th class="text-center">Harga</th>
+              <th class="text-center">Detail</th>
+              <th class="text-center">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for(let i = 0; i < obat.length; i++){ %>
+            <tr>
+              <td><%= i+1 %></td>
+              <td><%= obat[i].namaObat %></td>
+              <td><%= obat[i].jenisObat %></td>
+              <td>Rp. <%= obat[i].harga %></td>
+              <td class="text-center">
+                <form action="/obat/id/<%= obat[i].id %>?_method=GET" method="POST">
+                  <button type="submit" class="btn btn btn-primary btn-sm" >Detail Obat</button>
+                </form>
+              </td>
+              <td class="text-center">
+                <form action="/obat/<%= obat[i].id %>?_method=DELETE" 
+                  method="POST">
+                  <a 
+                  href="javascript:void()"
+                  class="btn btn-outline-warning btn-sm button-update"
+                  data-id="<%= obat[i].id %>"
+                  data-namaobat="<%= obat[i].namaObat %>"
+                  data-jenisobat="<%= obat[i].jenisObat %>"
+                  data-harga="<%= obat[i].harga %>"
+                  data-deskripsiobat="<%= obat[i].deskripsiObat %>"
+                  data-efeksamping="<%= obat[i].efekSamping %>"
+                  data-dosis="<%= obat[i].dosis %>"
+                  data-kontraindikasi="<%= obat[i].kontraindikasi %>"
+                    >Edit</a
+                  >          
+                  <button 
+                  type="submit" 
+                  class="btn btn-outline-danger btn-sm" 
+                  onclick="return confirm('Yakin untuk menghapus data?');">
+                    Delete
+                  </button>
+                </form>
+              </td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

@@ -36,6 +36,17 @@ const obatScheme = new mongoose.Schema({
         type: String,
         required: true
     },
+
+    pemasok : [{
+        namaPemasok : {
+            type: String,
+            required: true
+        },
+        alamatPemasok : {
+            type: String,
+            required: true
+        }
+    }]
 });
 
 module.exports = mongoose.model("Obat", obatScheme);

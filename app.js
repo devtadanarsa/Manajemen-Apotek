@@ -13,6 +13,7 @@ mongoose.connect("mongodb://localhost:27017/dbApotek");
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const obatRouter = require("./routes/obat");
+const loginRouter = require("./routes/login");
 
 var app = express();
 
@@ -35,11 +36,19 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static('public'));
 
+const checkLoggedIn = (req, res, next) => {
+  if(req.session.loggedIn){
+    next();
+  }else{
+    res.redirect("/");
+  }
+}
 
-app.use('/', indexRouter);
+app.use('/', loginRouter);
 app.use('/users', usersRouter);
-app.use('/obat', obatRouter);
+app.use('/obat',checkLoggedIn, obatRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

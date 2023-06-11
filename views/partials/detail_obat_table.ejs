@@ -1,0 +1,114 @@
+<!-- DataTales Example -->
+
+<div class="card shadow mb-4 ">
+    <div class="card-header navbar py-3 justify-content-between">
+      <!-- Button trigger modal -->
+      <nav class="navbar d-sm-inline-block navbar-light bg-light">
+        <h4 class="text-left" style="margin-bottom: 0;">Detail Obat</h4>
+      </nav>
+  
+  
+    </div>
+    <div class="card-body">
+        <div> 
+            <table width="100%" cellspacing="0">
+            <tr>
+                <td width="5%">Nama Obat</td>
+                <td width="3%">:</td>
+                <td width="92%" class="text-left"><%= obat.namaObat %></td>
+            </tr>
+            <tr>
+                <td>Jenis Obat</td>
+                <td>:</td>
+                <td><%= obat.jenisObat %></td>
+            </tr>
+            <tr>
+                <td>Harga</td>
+                <td>:</td>
+                <td>Rp. <%= obat.harga %></td>
+            </tr>
+            <tr>
+                <td>Dosis</td>
+                <td>:</td>
+                <td><%= obat.dosis %></td>
+            </tr>
+            <tr><td><td><br></td></tr>
+            <tr>
+                <td>Deskripsi</td>
+                <td>:</td>
+            </tr>
+            <tr>
+                <td colspan="3"><%= obat.deskripsiObat %></td>
+            </tr>
+            <tr><td><td><br></td></tr>
+            <tr>
+                <td>Efek Samping</td>
+                <td>:</td>
+            </tr>
+            <tr>
+                <td colspan="3"><%= obat.efekSamping %></td>
+            </tr>
+            <tr><td><td><br></td></tr>
+            <tr>
+                <td>Kontraindikasi</td>
+                <td>:</td>
+            </tr>
+            <tr>
+                <td colspan="3"><%= obat.kontraindikasi %></td>
+            </tr>
+            </table>
+            <br>
+        </div>
+    </div>
+
+    <div class="card-header navbar py-3 justify-content-between">
+        <!-- Button trigger modal -->
+        <nav class="navbar d-sm-inline-block navbar-light bg-light">
+            <h4 class="text-left" style="margin-bottom: 0;">List Pemasok</h4>
+        </nav>
+    </div><br>
+    <div class="card-body">
+        <button type="button" class="btn btn-outline-success mb-3" data-toggle="modal" data-target="#add-modal">
+            Tambah Pemasok
+        </button>
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                <tr class="text-center">
+                    <th>No</th>
+                    <th>Nama</th>
+                    <th>Alamat</th>
+                    <th style="width: 80;">Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <% for(let i=0; i < pemasok.length; i++){ %>
+                        <tr>
+                            <td class="text-center">
+                                <%= i + 1 %>
+                            </td>
+                            <td>
+                                <%= pemasok[i].namaPemasok %>
+                            </td>
+                            <td>
+                                <%= pemasok[i].alamatPemasok %>
+                            </td>
+                            <td class="text-center">
+                                <form action="/obat/id/<%=obat.id %>/<%=pemasok[i].id%>?_method=DELETE" method="POST">
+                                    <button 
+                                    type="submit" 
+                                    class="btn btn-outline-danger btn-sm"
+                                    onclick="return confirm('Anda Yakin?');">
+                                    Delete</button>
+                                </form>
+
+                            </td>
+                        </tr>
+                    <% } %>    
+                </tbody>
+            </table>
+        </div>
+        <button class="btn btn-secondary" onclick="window.location.href='/obat'">Tutup</button>
+        </div>
+    </div>
+</div>

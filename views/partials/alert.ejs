@@ -1,0 +1,8 @@
+<!-- Alert -->
+<div class="col-auto col-lg-12 mt-1">
+    <% if(alert.message !="" ) { %>
+        <div class="alert alert-<%= alert.status %>" role="alert">
+            <%= alert.message %>
+        </div>
+        <% } %>
+</div>
