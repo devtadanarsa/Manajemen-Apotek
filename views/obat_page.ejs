@@ -15,13 +15,6 @@
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
-                <a class="nav-link" href="#">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
-            </li>
-
             <!-- Divider -->
             <hr class="sidebar-divider">
 
@@ -45,13 +38,6 @@
                     <span>Users</span>
                 </a>
             </li>
-
-            <!-- Nav Item - users -->
-            <!-- <li class="nav-item">
-                <a class="nav-link" href="/user">
-                    <i class="fa-solid fa-users"></i>
-                    <span>Users</span></a>
-            </li> -->
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
@@ -80,7 +66,7 @@
                         <h6 class="collapse-header">Obat</h6>
                         <a class="collapse-item" href="/obat">Semua Obat</a>
                         <a class="collapse-item" href="/obat/jenis/Obat Bebas">Obat Bebas</a>
-                        <a class="collapse-item" href="/obat/jenis/Obat Kuat">Obat Kuat</a>
+                        <a class="collapse-item" href="/obat/jenis/Obat Keras">Obat Keras</a>
                         <a class="collapse-item" href="/obat/jenis/Narkotika">Narkotika</a>
                     </div>
                 </div>
@@ -89,7 +75,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">
                     <i class="fa-solid fa-mortar-pestle"></i>
-                    <span> Resep</span></a>
+                    <span>Resep</span></a>
             </li>
 
             <!-- Divider -->
@@ -227,64 +213,3 @@
         </script>
 
         <%- include('partials/footer') %>
-
-            // <!-- <script>
-            //     var searchInput = document.getElementById('searchInput');
-            //     var namaLink = document.getElementById('namaLink');
-            //     var umurLink = document.getElementById('umurLink');
-            //     var telpLink = document.getElementById('telpLink');
-            //     var emailLink = document.getElementById('emailLink');
-            //     var alamatLink = document.getElementById('alamatLink');
-
-            //     namaLink.addEventListener('click', function (event) {
-            //         event.preventDefault(); // Mencegah aksi default hyperlink
-
-            //         var searchValue = searchInput.value; // Mendapatkan nilai dari inputan form
-            //         if (searchValue.trim() !== '') { // cek null
-            //             var url = "/user/nama/" + encodeURIComponent(searchValue); // Membuat URL dengan nilai search
-            //             // Redirect ke URL yang ditentukan
-            //             window.location.href = url;
-            //         }
-            //     });
-            //     umurLink.addEventListener('click', function (event) {
-            //         event.preventDefault(); // Mencegah aksi default hyperlink
-
-            //         var searchValue = searchInput.value; // Mendapatkan nilai dari inputan form
-            //         if (searchValue.trim() !== '') { // cek null
-            //             var url = "/user/umur/" + encodeURIComponent(searchValue); // Membuat URL dengan nilai search
-            //             // Redirect ke URL yang ditentukan
-            //             window.location.href = url;
-            //         }
-            //     });
-            //     telpLink.addEventListener('click', function (event) {
-            //         event.preventDefault(); // Mencegah aksi default hyperlink
-
-            //         var searchValue = searchInput.value; // Mendapatkan nilai dari inputan form
-            //         if (searchValue.trim() !== '') { // cek null
-            //             var url = "/user/telp/" + encodeURIComponent(searchValue); // Membuat URL dengan nilai search
-            //             // Redirect ke URL yang ditentukan
-            //             window.location.href = url;
-            //         }
-            //     });
-            //     alamatLink.addEventListener('click', function (event) {
-            //         event.preventDefault(); // Mencegah aksi default hyperlink
-
-            //         var searchValue = searchInput.value; // Mendapatkan nilai dari inputan form
-            //         if (searchValue.trim() !== '') { // cek null
-            //             var url = "/user/alamat/" + encodeURIComponent(searchValue); // Membuat URL dengan nilai search
-            //             // Redirect ke URL yang ditentukan
-            //             window.location.href = url;
-            //         }
-            //     });
-            //     emailLink.addEventListener('click', function (event) {
-            //         event.preventDefault(); // Mencegah aksi default hyperlink
-
-            //         var searchValue = searchInput.value; // Mendapatkan nilai dari inputan form
-            //         if (searchValue.trim() !== '') { // cek null
-            //             var url = "/user/email/" + encodeURIComponent(searchValue); // Membuat URL dengan nilai search
-            //             // Redirect ke URL yang ditentukan
-            //             window.location.href = url;
-            //         }
-            //     });
-
-            // </script> -->

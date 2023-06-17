@@ -89,3 +89,26 @@
       </div>
     </div>
   </div>
+
+  <script>
+    // Ambil referensi elemen input dan tabel
+    const searchInput = document.getElementById('searchInput');
+    const tableBody = document.querySelector('#dataTable tbody');
+  
+    // Tambahkan event listener saat input pencarian berubah
+    searchInput.addEventListener('input', function() {
+      const searchValue = this.value.toLowerCase();
+  
+      // Lakukan filter pada setiap baris tabel
+      Array.from(tableBody.rows).forEach(function(row) {
+        const name = row.cells[1].textContent.toLowerCase();
+  
+        // Periksa apakah nama obat mengandung kata kunci pencarian
+        if (name.includes(searchValue)) {
+          row.style.display = ''; // Tampilkan baris jika cocok
+        } else {
+          row.style.display = 'none'; // Sembunyikan baris jika tidak cocok
+        }
+      });
+    });
+  </script>

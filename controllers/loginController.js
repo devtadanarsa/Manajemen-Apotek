@@ -20,7 +20,7 @@ module.exports = {
             const {username, password} = req.body;
             console.log(username);
             console.log(password);
-            if(username == "admin" && password == "termosdingin"){
+            if(username == "admin" && password == "123"){
                 req.session.loggedIn = true;
                 req.session.username = username;
                 res.redirect("/obat");
